@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+{% block body %}
+{% load static %}
+<div class="shopper-informations">
+				<div class="row">
+					<div class="col-sm-3">
+				<!--		
+					</div>
+					<div class="col-sm-5 clearfix">
+						<div class="signup-form">
+							<p>Bill To</p>
+							<div class="form-one">
+								<form method="post">
+                                {% csrf_token %}
+								{{form.as_p}}
+								<button type="submit">Kaydet</button>
+								</form>
+							</div>
+							
+						</div>
+					</div> -->
+					
+					<h3>Kayıtlı Adreslerim</h3>
+										<div><a href="/user/add/adress"><button type="button" class="ty-font-w-semi-bold ty-button ty-bordered ty-transition ty-input-small ty-secondary">Yeni Adres ekle</button></a> <a href="/user/delete"><button style="margin-left:900px;z-index:2;" type="button" class="ty-font-w-semi-bold ty-button ty-bordered ty-transition ty-input-small ty-secondary">Hesabı Sil</button></a></div>
+                                       
+
+					<div>
+					{% for info in info %}
+					
+						<div class="ty-display-flex ty-bg-white ty-flex-column addresses-page-content-box">
+						<div class="ty-display-flex addresses-page-content-box-header"><span class="ty-text ty-color-black ty-font-md ty-font-w-bold">{{info.adress_name}}</span></div>
+						<div class="ty-display-flex ty-flex-column address-page-content-box-body"><span class="ty-text ty-color-black ty-font-sm ty-font-w-bold">{{info.name}} {{info.surname}}</span><span class="ty-text ty-color-black ty-font-sm">{{info.adress}} </span><span class="ty-text ty-color-black ty-font-sm">{{info.city}}/{{info.country}}</span><span class="ty-text ty-color-black ty-font-sm">{{info.tel_no}}</span></div>
+						<br><div class="ty-display-flex ty-flex-row address-page-content-box-actions"><a class="ty-font-sm ty-font-w-semi-bold ty-link-button ty-transition ty-notr ty-input-small"><div class="ty-display-flex address-page-content-box-actions-delete"></div>
+						</a><a href="/user/delete/adress/{{info.id}}"><button type="button" class="ty-font-w-semi-bold ty-button ty-bordered ty-transition ty-input-small ty-secondary">Adresi Sil</button></a></div>
+						</div>	
+					
+					
+					{% endfor %}
+						</div>		
+				</div>
+			</div>
+            <br>
+          
+<style>
+.addresses-page-content-box {
+    height: 232px;
+    border: solid 1px #e2e2e2;
+    border-radius: 3px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    flex: 0 31%;
+    position: relative;
+    overflow: hidden;}
+	.addresses-page-content-box .addresses-page-content-box-header {
+    background-color: #fafafa;
+    border-bottom: solid 1px #e2e2e2;
+    height: 42px;
+    align-items: center;
+    padding: 0 15px;
+}
+.addresses-page-content-box .address-page-content-box-body {
+    margin: 5px 15px;
+}
+.addresses-page-content-box .address-page-content-box-actions {
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 1px;
+    left: 15px;
+    right: 15px;
+}
+.ty-link-button:not(.ty-disabled).ty-notr {
+    text-decoration: none;
+    color: #666;
+}
+.addresses-page-content-box .address-page-content-box-actions .ty-button {
+    width: 120px;
+}
+.ty-button:not(:disabled).ty-secondary {
+    background: 0 0;
+    border-color: #f27a1a;
+    color: #f27a1a;
+}
+.ty-button {
+    width: 100%;
+    cursor: pointer;
+    padding: 6px 10px;
+    font: inherit;
+    font-size: 14px;
+    line-height: 18px;}
+	.addresses-page-content-box .address-page-content-box-body {
+    margin: 5px 15px;
+}
+.ty-flex-column {
+    flex-direction: column;
+}
+.ty-display-flex {
+    display: flex;
+}
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+user agent stylesheet
+ul {
+    list-style-type: disc;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    font-weight: 400px;
+}
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #333;
+    background-color: #fff;}
+</style>
+{% endblock body %}
+

@@ -1,0 +1,202 @@
+{% extends "layout.html" %}
+{% block body %}
+{% load static %}
+<div class="header-bottom"><!--header-bottom-->
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-9">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				
+			</div>
+			<div class="col-sm-3">
+				
+			</div>
+		</div>
+	</div>
+</div><!--/header-bottom-->
+</header><!--/header-->
+	
+	
+	<section id="advertisement">
+		<div class="container">
+			<img src="images/shop/advertisement.jpg" alt="" />
+		</div>
+	</section>
+	
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="left-sidebar">
+						<h2>KATEGORİ</h2>
+						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
+							<div class="panel panel-default">
+								
+								
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#mens">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											ERKEK GİYİM
+										</a>
+									</h4>
+								</div>
+								<div id="mens" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="/product/men/Sweatshirt/1">Sweatshirt</a></li>
+											<li><a href="/product/men/Kaban*Mont/1">Kaban/Mont</a></li>
+											<li><a href="/product/men/Kazak*Hırka/1">Kazak/Hırka</a></li>
+											<li><a href="/product/men/Pantolon/1">Pantolon</a></li>
+											<li><a href="/product/men/Jeans/1">Jeans</a></li>
+											<li><a href="/product/men/Ceket/1">Ceket</a></li>
+											<li><a href="/product/men/Gömlek/1">Gömlek</a></li>
+											<li><a href="/product/men/Takım_Elbise/1">Takım Elbise</a></li>
+											<li><a href="/product/men/Şort*Kapri/1">Şort/Kapri</a></li>
+											<li><a href="/product/men/Tişört/1">Tişört</a></li>
+											<li><a href="/product/men/İç Giyim*Çorap/1">İç Giyim/Çorap</a></li>
+											
+										</ul>
+									</div>
+								</div>
+							</div>
+							
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#womens">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											KADIN GİYİM
+										</a>
+									</h4>
+								</div>
+								<div id="womens" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="/product/women/Sweatshirt/1">Sweatshirt</a></li>
+											<li><a href="/product/women/Kaban*Mont/1">Kaban/Mont</a></li>
+											<li><a href="/product/women/Kazak*Hırka/1">Kazak/Hırka</a></li>
+											<li><a href="/product/women/Pantolon/1">Pantolon</a></li>
+											<li><a href="/product/women/Jeans/1">Jeans</a></li>
+											<li><a href="/product/women/Ceket/1">Ceket</a></li>
+											<li><a href="/product/women/Gömlek/1">Gömlek</a></li>
+											<li><a href="/product/women/Elbise/1">Elbise</a></li>
+											<li><a href="/product/women/Şort*Kapri/1">Şort/Kapri</a></li>
+											<li><a href="/product/women/Tişört/1">Tişört</a></li>
+											<li><a href="/product/women/İç Giyim*Çorap/1">İç Giyim/Çorap</a></li>
+											<li><a href="/product/women/Tayt/1">Tayt</a></li>
+											<li><a href="/product/women/Plaj_Giyim/1">Plaj Giyim</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">ÇOCUK GİYİM</a></h4>
+								</div>
+							</div>
+							
+							
+							
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">ÇANTA/AKSESUAR</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">AYAKKABI</a></h4>
+								</div>
+							</div>
+						</div><!--/category-products-->
+					
+						<div class="brands_products"><!--brands_products-->
+							<h2>Brands</h2>
+							<div class="brands-name">
+								<ul class="nav nav-pills nav-stacked">
+									{% for brand,number in brand %}
+								<li><a href="/product/brand/{{brand}}/1"> <span class="pull-right">{{number}}</span>{{brand}}</a></li>
+								{% endfor %}
+								</ul>
+							</div>
+						</div><!--/brands_products-->
+						
+
+						
+						<div class="shipping text-center"><!--shipping-->
+							<img src="images/home/shipping.jpg" alt="" />
+						</div><!--/shipping-->
+						
+					</div>
+				</div>
+				
+				<div class="col-sm-9 padding-right">
+					<div class="features_items"><!--features_items-->
+						<h2 class="title text-center">FAVORİLERİM</h2>
+						
+						{% for fav in fav %}
+                        <div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+									{% if fav.image %}
+									<img src="{{fav.image.url}}" width="268px" height="250px" alt="" />
+									{% else %}
+									{% endif %}
+										
+										<h2>{{fav.price}} TL</h2>
+										<h4>{{fav.marka}}</h4>
+										<p>{{fav.name}}</p>
+										
+									</div>
+                                    
+									<div class="product-overlay">
+                                    
+										<div class="overlay-content">
+											<h2>{{fav.price}} TL</h2>
+											<p>{{fav.name}}</p>
+											<a href="/product/{{fav.id}}" class="btn btn-default add-to-cart"><i class="fa fa-plus-square"></i>Ürünü Gör</a>
+										{% if fav.id in carts %}
+										   <a href="/product/cart/delete/{{fav.id}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Sepetten Çıkar</a>
+
+											{% else %}
+									       <a href="/product/cart/add/{{fav.id}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Sepete Ekle</a>
+
+											{% endif %}                                        </div>
+									</div>
+                                    
+								</div>
+								<div class="choose">
+								<ul>
+									
+									
+										<li><a href="/product/fav/delete/{{fav.id}}">Favorilerden çıkar</a></li>
+							
+									
+								</ul>
+								</div>
+							</div>
+						</div>
+                        {% endfor %}
+						
+						
+						
+					</div><!--features_items-->
+                   
+                
+			</div>
+		</div>
+
+	</section>
+	
+	
+{% endblock body %}

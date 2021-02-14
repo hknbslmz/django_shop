@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+  
+
+
+    <div style="margin:auto;width: 600px;
+    height: 300px;
+    padding: 20px;"><h1  style="font-size: 2cm;margin:auto;display: table;">{{x}}</h1></div>
+    <br><br><br><hr><div><form method="post" style="margin:auto;display: table;">
+    {% csrf_token %}
+        <input name="keyword" type="text">
+        <button type="submit">okey</button></form>
+         {% if messages %}
+    {% for message in messages %}
+    <div style="margin:auto;display: table; {% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</div>
+    {% endfor %}
+    {% endif %}</div>
+    
+</body>
+</html>
+<style>
+    body {
+    font-family: Verdana, monospace, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: justify;
+    min-height: 800px;
+}
+
+</style>

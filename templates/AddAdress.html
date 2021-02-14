@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block body %}
+{% load static %}
+<div class="shopper-informations">
+				<div class="row">
+					<div class="col-sm-3">
+						
+					</div>
+					<div class="col-sm-5 clearfix">
+						<div class="signup-form">
+							<p>Bill To</p>
+							<div class="form-one">
+								<form method="post">
+                                {% csrf_token %}
+								{{form.as_p}}
+								<button type="submit">Kaydet</button>
+								</form>
+							</div>
+							
+						</div>
+					</div>
+										
+				</div>
+			</div>
+            <br>
+   
+{% endblock body %}

@@ -1,0 +1,287 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+<div class="header-bottom"><!--header-bottom-->
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-9">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="color: #d69717;;">
+						<span class="sr-only">Toggle navigation</span>
+					
+					</button>
+				</div>
+				
+			</div>
+			<div class="col-sm-3">
+				
+			</div>
+		</div>
+	</div>
+</div><!--/header-bottom-->
+</header><!--/header-->
+	
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="left-sidebar">
+						<h2>Category</h2>
+						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
+							
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#mens">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											ERKEK GİYİM
+										</a>
+									</h4>
+								</div>
+								<div id="mens" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="/product/men/Sweatshirt/1">Sweatshirt</a></li>
+											<li><a href="/product/men/Kaban*Mont/1">Kaban/Mont</a></li>
+											<li><a href="/product/men/Kazak*Hırka/1">Kazak/Hırka</a></li>
+											<li><a href="/product/men/Pantolon/1">Pantolon</a></li>
+											<li><a href="/product/men/Jeans/1">Jeans</a></li>
+											<li><a href="/product/men/Ceket/1">Ceket</a></li>
+											<li><a href="/product/men/Gömlek/1">Gömlek</a></li>
+											<li><a href="/product/men/Takım_Elbise/1">Takım Elbise</a></li>
+											<li><a href="/product/men/Şort*Kapri/1">Şort/Kapri</a></li>
+											<li><a href="/product/men/Tişört/1">Tişört</a></li>
+											<li><a href="/product/men/İç Giyim*Çorap/1">İç Giyim/Çorap</a></li>
+											
+										</ul>
+									</div>
+								</div>
+							</div>
+							
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#womens">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											KADIN GİYİM
+										</a>
+									</h4>
+								</div>
+								<div id="womens" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="/product/women/Sweatshirt/1">Sweatshirt</a></li>
+											<li><a href="/product/women/Kaban*Mont/1">Kaban/Mont</a></li>
+											<li><a href="/product/women/Kazak*Hırka/1">Kazak/Hırka</a></li>
+											<li><a href="/product/women/Pantolon/1">Pantolon</a></li>
+											<li><a href="/product/women/Jeans/1">Jeans</a></li>
+											<li><a href="/product/women/Ceket/1">Ceket</a></li>
+											<li><a href="/product/women/Gömlek/1">Gömlek</a></li>
+											<li><a href="/product/women/Elbise/1">Elbise</a></li>
+											<li><a href="/product/women/Şort*Kapri/1">Şort/Kapri</a></li>
+											<li><a href="/product/women/Tişört/1">Tişört</a></li>
+											<li><a href="/product/women/İç Giyim*Çorap/1">İç Giyim/Çorap</a></li>
+											<li><a href="/product/women/Tayt/1">Tayt</a></li>
+											<li><a href="/product/women/Plaj_Giyim/1">Plaj Giyim</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">ÇOCUK GİYİM</a></h4>
+								</div>
+							</div>
+							
+							
+							
+							
+							
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="/product/bags&accessory/1">ÇANTA/AKSESUAR</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">AYAKKABI</a></h4>
+								</div>
+							</div>
+						</div><!--/category-products-->
+					
+						<div class="brands_products"><!--brands_products-->
+							<h2>Markalar</h2>
+							<div class="brands-name">
+								<ul class="nav nav-pills nav-stacked">
+									{% for brand,number in brand %}
+								<li><a href="/product/brand/{{brand}}/1"> <span class="pull-right">{{number}}</span>{{brand}}</a></li>
+								{% endfor %}
+								</ul>
+							</div>
+						</div><!--/brands_products-->
+						
+					
+						
+						<div class="shipping text-center"><!--shipping-->
+							<img src="images/home/shipping.jpg" alt="" />
+						</div><!--/shipping-->
+						
+					</div>
+				</div>
+				
+				<div class="col-sm-9 padding-right">
+					<div class="product-details"><!--product-details-->
+						<div class="col-sm-5">
+							<div class="view-product">
+								<img src="{{product.image.url}}" width="268px" height="250px" alt="" />
+								<h3>ZOOM</h3>
+							</div>
+							<div id="similar-product" class="carousel slide" data-ride="carousel">
+								
+								  <!-- Wrapper for slides -->
+								    <div class="carousel-inner">
+										<div class="item active">
+										  <a href=""><img src="images/product-details/similar1.jpg" alt=""></a>
+										  <a href=""><img src="images/product-details/similar2.jpg" alt=""></a>
+										  <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
+										</div>
+										<div class="item">
+										  <a href=""><img src="images/product-details/similar1.jpg" alt=""></a>
+										  <a href=""><img src="images/product-details/similar2.jpg" alt=""></a>
+										  <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
+										</div>
+										<div class="item">
+										  <a href=""><img src="images/product-details/similar1.jpg" alt=""></a>
+										  <a href=""><img src="images/product-details/similar2.jpg" alt=""></a>
+										  <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
+										</div>
+										
+									</div>
+
+								  <!-- Controls -->
+								  <a class="left item-control" href="#similar-product" data-slide="prev">
+									<i class="fa fa-angle-left"></i>
+								  </a>
+								  <a class="right item-control" href="#similar-product" data-slide="next">
+									<i class="fa fa-angle-right"></i>
+								  </a>
+							</div>
+
+						</div>
+						<div class="col-sm-7">
+							<div class="product-information"><!--/product-information-->
+								<img src="" class="newarrival" alt="" />
+								<h2>{{product.name}}</h2>
+								<p>Web ID:{{product.id}}</p>
+
+
+								<body>
+    
+        <form method="post">
+            {% csrf_token %}
+            
+            <div>
+             <div style="z-index:1">
+             &nbsp;
+            <button type="submit" name="keyword" class="fa fa-star checked" value="1" color="rgb(224, 124, 9);"></button>
+            <button type="submit" name="keyword" class="fa fa-star checked" value="2"></button>
+            <button type="submit" name="keyword" class="fa fa-star checked" value="3"></button>
+            <button type="submit" name="keyword" class="fa fa-star checked" value="4"></button>
+            <button type="submit" name="keyword" class="fa fa-star checked" value="5"></button>
+            &ensp; <span>Rating(&#9733 {{rat}})</span>
+		    </div>
+			
+            <div style="margin-top: -21px;margin-left: -1px;z-index:-1;position:absolute">
+         
+&ensp; 
+                    <span>1</span>
+        &nbsp;&nbsp; 
+
+        <span>2</span>
+&nbsp;
+        <span>3</span>
+        
+        &nbsp; 
+
+        <span>4</span>
+    &nbsp;&nbsp;
+
+        <span>5</span>
+  
+            </div>
+			
+            </div>
+           
+
+        </form>
+       
+       
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</body>
+<br>
+{% if product.id in favs %}
+									<a style="color: #b5aa9e;" href="/product/fav/delete/{{product.id}}"><i class="fa fa-plus-square"></i>Favorilerden çıkar</a>
+	
+										{% else %}
+											<a style="color: #b5aa9e;" href="/product/fav/add/{{product.id}}"><i class="fa fa-plus-square"></i>Favorilere Ekle</a>
+
+										{% endif %}
+
+								
+                          <br>      
+                                
+						  <form method="post">
+							  {% csrf_token %}
+                                <span>
+									<span>{{product.price}} TL</span>
+									<label>ADET:</label>
+									
+										<input type="text" name="cart_number" value="1" />
+									<button type="submit" class="btn btn-fefault cart">
+										<i class="fa fa-shopping-cart" style="color: aliceblue;"></i>
+										Sepete Ekle
+									</button>
+								</span>
+									</form>
+									
+							
+
+								<p><b>MARKA:</b>{{product.marka}}</p>
+								<a href=""><img src="images/product-details/share.png" class="share img-responsive"  alt="" /></a>
+							</div><!--/product-information-->
+						</div>
+					</div><!--/product-details-->
+					
+					
+					
+					
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	
+<style>
+		button:hover {
+		  color: rgb(224, 124, 9);
+		  
+		}
+		.button {
+			color: rgb(224, 124, 9);
+		}
+		
+		.fa {
+			display: contents;
+			font: normal normal normal 14px/1 FontAwesome;
+			font-size: larger;
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;
+			color: rgb(181 170 158);}			
+</style>
+
+{% endblock body %}

@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+{% block body %}
+{% load static %}
+{% load mathfilters %}
+
+
+
+
+	<section id="cart_items">
+		<div class="container">
+			<br>
+			<hr style="bottom: darkgoldenrod;size: 10mm;">
+			<div class="table-responsive cart_info">
+				<table class="table table-condensed">
+					<thead>
+						<tr class="cart_menu">
+							<td class="image">Ürün</td>
+							<td class="description"></td>
+							<td class="price">Fiyat</td>
+							<td class="quantity">ADET</td>
+							<td class="total">Total</td>
+							<td></td>
+						</tr>
+					</thead>
+					<tbody>
+                    {% for cart in cart_detail %}
+                    <tr>
+							<td class="cart_product">
+								<a href="/product/{{cart.cart_product.id}}"><img src="{{cart.cart_product.image.url}}" width="80px" height="60px" alt=""></a>
+							</td>
+							<td class="cart_description">
+								<h4><a href="/product/{{cart.cart_product.id}}">{{cart.cart_product.name}}</a></h4>
+								<p>Web ID: {{cart.cart_product.id}}</p>
+							</td>
+							<td class="cart_price">
+								<p>{{cart.cart_product.price}}TL</p>
+							</td>
+							<td class="cart_quantity">
+								<div class="cart_quantity_button">
+									<form method="post">
+                                    {% csrf_token %}
+                                    <input class="cart_quantity_input" type="text" name="quantity" value="{{cart.number}}"  autocomplete="off" size="2">
+                                    <input type="text" name="id" value="{{cart.cart_product.id}}" style="display:none;">
+									 &nbsp;<button class="submit" > ok </button>
+                                    </form>
+									
+								</div>
+							</td>
+							<td class="cart_total">
+								<p class="cart_total_price">{{ cart.cart_product.price|mul:cart.number }}</p>
+							</td>
+							<td class="cart_delete">
+								<a class="cart_quantity_delete" href="/product/cart/delete/{{cart.cart_product.id}}"><i class="fa fa-times"></i></a>
+							</td>
+						</tr>
+                    {% endfor %}
+					<tr>
+					<td class="cart_description">
+								
+							</td>
+							<td class="cart_product">
+								
+							</td>
+							
+							<td class="cart_price">
+								
+							</td>
+							<td class="cart_quantity">
+								
+								<p class="cart_total_price">TOPLAM:</p>
+							</td>
+							<td class="cart_total">
+								<p class="cart_total_price">{{total}}</p>
+							</td>
+							<td class="cart_delete">
+							</td>
+						</tr>
+						
+
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section> <!--/#cart_items-->
+
+	
+	
+{% endblock body %}
